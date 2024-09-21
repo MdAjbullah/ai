@@ -7,7 +7,7 @@ function speak(text) {
         text_speak.rate = 1;
         text_speak.pitch = 1;
         text_speak.volume = 1;
-        text_speak.lang = 'hi-IN';
+        text_speak.lang = 'hi-IN'; // Set language to Hindi, change to 'en-US' for English
         window.speechSynthesis.speak(text_speak);
     } else {
         console.error('Speech Synthesis not supported in this browser.');
@@ -58,62 +58,58 @@ btn.addEventListener('click', () => {
 function takeCommand(message) {
     message = message.toLowerCase();
 
+    // Basic responses
     if (message.includes('hello')) {
-        speak('Hello sir, how can I help you?');
+        speak('Hello, how can I assist you?');
     } else if (message.includes('who are you')) {
-        speak('I am Miki, your personal assistant created by MD sir.');
+        speak('I am Miki, your personal assistant created by md si.');
     } else if (message.includes('how are you')) {
-        speak('I am fine sir, thank you for asking.');
-    } else if (message.includes('what is document object model')) {
-        speak('Dom stands for document object model. Dom is present inside the Browser. Dom is not a part of javascript, it is an interface between browser and javascript. Dom is a browser API used between Javascript and browser to create the HTML and CSS elements through javascript. Dom allows the user to convert HTML Elements into javascript objects. Dom is a tree-like structure of HTML tags that is present in javascript to manipulate the elements of HTML and CSS in javascript. Dom is a hierarchical structure of HTML elements that is present inside the browser. To select the elements of HTML in javascript we use Selectors in Dom: dom uses a keyword known as document that is used as a root object that has all the inbuilt methods of selectors. document.getElementById(); document.getElementsByClassName(); document.getElementsByTagName(); document.getElementsByName(); document.querySelector(); document.querySelectorAll();');
+        speak('I am fine, thank you for asking. what about you');
     } else if (message.includes('what is your name')) {
         speak('I am Miki.');
     } else if (message.includes('what is the time')) {
         speak('The time is ' + new Date().getHours() + ":" + new Date().getMinutes());
+
+    // Open websites
     } else if (message.includes('open google')) {
         window.open('https://www.google.com');
     } else if (message.includes('open youtube')) {
         window.open('https://www.youtube.com');
-    } else if (message.includes('open facebook')) {
-        window.open('https://www.facebook.com');
-    } else if (message.includes('open instagram')) {
-        window.open('https://www.instagram.com');
-    } else if (message.includes('open twitter')) {
-        window.open('https://www.twitter.com');
-    } else if (message.includes('open linkedin')) {
-        window.open('https://www.linkedin.com');
-    } else if (message.includes('open github')) {
-        window.open('https://www.github.com');
-    } else if (message.includes('open whatsapp')) {
-        window.open('https://www.whatsapp.com');
-    } else if (message.includes('open amazon')) {
-        window.open('https://www.amazon.com');
-    } else if (message.includes('open flipkart')) {
-        window.open('https://www.flipkart.com');
-    } else if (message.includes('open snapdeal')) {
-        window.open('https://www.snapdeal.com');
-    } else if (message.includes('open paytm')) {
-        window.open('https://www.paytm.com');
-    } else if (message.includes('open myntra')) {
-        window.open('https://www.myntra.com');
-    } else if (message.includes('open jabong')) {
-        window.open('https://www.jabong.com');
-    } else if (message.includes('open olx')) {
-        window.open('https://www.olx.com');
-    } else if (message.includes('open quikr')) {
-        window.open('https://www.quikr.com');
-    } else if (message.includes('open naukri')) {
-        window.open('https://www.naukri.com');
-    } else if (message.includes('open indeed')) {
-        window.open('https://www.indeed.com');
-    } else if (message.includes('open monster')) {
-        window.open('https://www.monster.com');
-    } else if (message.includes('open timesjobs')) {
-        window.open('https://www.timesjobs.com');
-    } else if (message.includes('open shine')) {
-        window.open('https://www.shine.com');
-    } else if (message.includes('open glassdoor')) {
-        window.open('https://www.glassdoor.com');
+
+    // JavaScript Concepts
+    } else if (message.includes('what are the differences between var let and const')) {
+        speak('Var is function-scoped, let and const are block-scoped. Const is used for variables that will not change, let for those that can be reassigned.');
+    } else if (message.includes('what is hoisting')) {
+        speak('Hoisting refers to JavaScript’s behavior of moving declarations to the top. Var variables are hoisted, while let and const are hoisted but remain in a temporal dead zone until initialized.');
+    } else if (message.includes('what are primitive data types in javascript')) {
+        speak('Primitive data types in JavaScript include string, number, boolean, undefined, null, and symbol.');
+    } else if (message.includes('how do you check the data type of a variable in javascript')) {
+        speak('You can use the typeof operator to check the data type of a variable.');
+    } else if (message.includes('what are the methods available for string manipulation')) {
+        speak('String methods include concat, slice, substr, replace, toUpperCase, toLowerCase, and many more.');
+    } else if (message.includes('how do you convert a string to a number in javascript')) {
+        speak('You can use Number(), parseInt(), or parseFloat() to convert a string to a number.');
+    } else if (message.includes('what is the difference between == and ===')) {
+        speak('== checks for equality with type coercion, while === checks for strict equality without type coercion.');
+    } else if (message.includes('what is a ternary operator')) {
+        speak('A ternary operator is a shorthand for if-else and has the syntax: condition ? expression1 : expression2.');
+    } else if (message.includes('how do you break out of a loop in javascript')) {
+        speak('You can use the break statement to exit a loop prematurely.');
+    } else if (message.includes('what is the difference between for and while loops')) {
+        speak('A for loop is used when the number of iterations is known, while a while loop runs as long as a specified condition is true.');
+
+    // More advanced concepts
+    } else if (message.includes('what is a higher order function in javascript')) {
+        speak('A higher-order function is a function that takes another function as an argument or returns a function.');
+    } else if (message.includes('what is a closure in javascript')) {
+        speak('A closure is a function that remembers the scope in which it was created, even after the outer function has finished executing.');
+    } else if (message.includes('what is a promise in javascript')) {
+        speak('A promise represents a value that may be available now, later, or never. It is used to handle asynchronous operations.');
+    } else if (message.includes('what is async await in javascript')) {
+        speak('Async-await is a syntax to work with promises in a more synchronous manner, making asynchronous code easier to read.');
+    } else if (message.includes('what is dom in javascript')) {
+        speak('The DOM is the Document Object Model. It is an interface that allows you to manipulate HTML and XML documents using JavaScript.');
+
     } else {
         speak('Sorry, I did not understand that command.');
     }
