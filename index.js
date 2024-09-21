@@ -1,6 +1,5 @@
 let btn = document.querySelector('#btn');
 let content = document.querySelector('#content');
-let voice = document.querySelector('#voice');
 
 function speak(text, lang = 'hi-IN') {
     if ('speechSynthesis' in window) {
@@ -53,15 +52,11 @@ recognition.onresult = (event) => {
 btn.addEventListener('click', () => {
     if (!isRecognitionRunning) {
         recognition.start();
-        btn.style.display = 'none';
-        voice.style.display = 'block';
     }
 });
 
 function takeCommand(message) {
     message = message.toLowerCase();
-    btn.style.display = 'flex';
-    voice.style.display = 'none';
 
     // Basic responses
     if (message.includes('hello')) {
@@ -80,12 +75,9 @@ function takeCommand(message) {
         window.open('https://www.google.com');
     } else if (message.includes('open youtube')) {
         window.open('https://www.youtube.com');
-    } else if (message.includes('open facebook')) {
-        window.open('https://www.facebook.com');
-    }
 
-    // JavaScript concepts
-    else if (message.includes('what is javascript')) {
+    // JavaScript Concepts
+    } else if (message.includes('what is javascript')) {
         speak('JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is widely used for client-side and server-side web development.');
     } else if (message.includes('what is a variable in javascript')) {
         speak('A variable is a container for storing data values. You can think of variables as a box that holds data.');
@@ -101,37 +93,8 @@ function takeCommand(message) {
         speak('Null is an assignment value that represents no value, while undefined means a variable has been declared but has not yet been assigned a value.');
     } else if (message.includes('what is scope in javascript')) {
         speak('Scope determines the accessibility of variables. JavaScript has global scope, function scope, and block scope.');
-  
-    }
-    // Open websites
-    else if (message.includes('open google')) {
-        window.open('https://www.google.com');
-    } else if (message.includes('open youtube')) {
-        window.open('https://www.youtube.com');
-    } else if (message.includes('open facebook')) {
-        window.open('https://www.facebook.com');
-    }
-
-    // JavaScript concepts
-    else if (message.includes('what is javascript')) {
-        speak('JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is widely used for client-side and server-side web development.');
-    } else if (message.includes('what is a variable in javascript')) {
-        speak('A variable is a container for storing data values. You can think of variables as a box that holds data.');
-    } else if (message.includes('what are the different types of variables in javascript')) {
-        speak('There are three types of variables in JavaScript: var, let, and const.');
-    } else if (message.includes('what is a function in javascript')) {
-        speak('A function is a block of code that can be defined once and executed or invoked multiple times.');
-    } else if (message.includes('what is an array in javascript')) {
-        speak('An array is a special variable that can hold more than one value at a time.');
-    } else if (message.includes('what is an object in javascript')) {
-        speak('An object is a collection of key-value pairs, where each key is a string and each value is any data type.');
-    } else if (message.includes('what is the difference between null and undefined')) {
-        speak('Null is an assignment value that represents no value, while undefined means a variable has been declared but has not yet been assigned a value.');
-    } else if (message.includes('what is scope in javascript')) {
-        speak('Scope determines the accessibility of variables. JavaScript has global scope, function scope, and block scope.');
-    }
-
-    // Advanced JavaScript concepts
+    } 
+    // JavaScript Concepts - Advanced
     else if (message.includes('what is the difference between var and let')) {
         speak('Var is function-scoped, while let is block-scoped. Var variables can be redeclared, while let variables cannot.');
     } else if (message.includes('what is the difference between let and const')) {
@@ -162,53 +125,113 @@ function takeCommand(message) {
         speak('A higher-order function is a function that takes another function as an argument or returns a function.');
     } else if (message.includes('what is a closure in javascript')) {
         speak('A closure is a function that remembers the scope in which it was created, even after the outer function has finished executing.');
-    } else if (message.includes('what is a promise in javascript')) {
+    }
+    // JavaScript Concepts - Advanced
+    else if (message.includes('what is a promise in javascript')) {
         speak('A promise represents a value that may be available now, later, or never. It is used to handle asynchronous operations.');
     } else if (message.includes('what is async await in javascript')) {
         speak('Async-await is a syntax to work with promises in a more synchronous manner, making asynchronous code easier to read.');
     } else if (message.includes('what is dom in javascript')) {
         speak('The DOM is the Document Object Model. It is an interface that allows you to manipulate HTML and XML documents using JavaScript.');
+    } 
+    // array inbuild method with example
+    else if (message.includes('what is array in javascript')) {
+        speak('An array is a special variable that can hold more than one value at a time.');
     }
-
-    // Array methods
+    else if (message.includes('what is the difference between null and undefined')) {
+        speak('Null is an assignment value that represents no value, while undefined means a variable has been declared but has not yet been assigned a value.');
+    }
+    else if (message.includes('what is scope in javascript')) {
+        speak('Scope determines the accessibility of variables. JavaScript has global scope, function scope, and block scope.');
+    }
+    // map reduce filter inbuild method with example
     else if (message.includes('what is map in javascript')) {
         speak('The map() method creates a new array by calling a provided function on every element in the calling array.');
-    } else if (message.includes('what is reduce in javascript')) {
+    }
+    else if (message.includes('what is reduce in javascript')) {
         speak('The reduce() method executes a reducer function on each element of the array, resulting in a single output value.');
-    } else if (message.includes('what is filter in javascript')) {
+    }
+    else if (message.includes('what is filter in javascript')) {
         speak('The filter() method creates a new array with all elements that pass the test implemented by the provided function.');
-    } else if (message.includes('what is forEach in javascript')) {
-        speak('The forEach() method executes a provided function once for each array element.');
-    } else if (message.includes('what is the difference between slice and splice in javascript')) {
-        speak('The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end. The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.');
-    } else if (message.includes('how do you loop through an array in javascript')) {
-        speak('You can use a for loop, forEach() method, or map() method to loop through an array in JavaScript.');
-    } else if (message.includes('how can you add or remove elements from an array in javascript')) {
-        speak('You can use the push(), pop(), shift(), and unshift() methods to add or remove elements from an array in JavaScript.');
     }
+    
 
-    // DOM manipulation
-    else if (message.includes('how do you select elements in the dom using javascript')) {
-        speak('You can select elements in the DOM using methods like getElementById(), getElementsByClassName(), getElementsByTagName(), querySelector(), and querySelectorAll().');
-    } else if (message.includes('what are some methods available for manipulating the dom')) {
-        speak('Some methods available for manipulating the DOM include createElement(), appendChild(), removeChild(), setAttribute(), and innerHTML.');
-    } else if (message.includes('what is event bubbling in the dom')) {
-        speak('Event bubbling is the process where an event starts at the most specific element and flows up through its ancestors.');
-    } else if (message.includes('what are the differences between queryselector and getelementbyid')) {
-        speak('querySelector() returns the first element that matches a specified CSS selector, while getElementById() returns an element by its ID.');
-    } else if (message.includes('how do you create new elements in the dom using javascript')) {
-        speak('You can create new elements in the DOM using the document.createElement() method.');
-    } else if (message.includes('what is the purpose of the appendchild method in javascript')) {
-        speak('The appendChild() method is used to add elements to the DOM as children of a specified parent element.');
-    } else if (message.includes('how do you use appendchild to add elements to the dom')) {
-        speak('You can use the appendChild() method to add elements to the DOM by specifying the parent element to which the new element will be added.');
-    } else if (message.includes('what is the difference between appendchild and insertbefore')) {
-        speak('appendChild() adds an element as the last child of a parent element, while insertBefore() inserts an element before a specified child element.');
-    } else if (message.includes('provide a use case where you would use appendchild to manipulate the dom')) {
-        speak('You would use appendChild() to dynamically add new elements to a web page based on user interactions or other events.');
-    }
-
-
+else if (message.includes('what is filter in javascript')) {
+    speak('The filter() method creates a new array with all elements that pass the test implemented by the provided function.');
+}
+else if (message.includes('what is reduce in javascript')) {
+    speak('The reduce() method executes a reducer function on each element of the array, resulting in a single output value.');
+}
+else if (message.includes('what is map in javascript')) {
+    speak('The map() method creates a new array by calling a provided function on every element in the calling array.');
+}
+else if (message.includes('what is forEach in javascript')) {
+    speak('The forEach() method executes a provided function once for each array element.');
+}
+else if (message.includes('what is the difference between slice and splice in javascript')) {
+    speak('The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end. The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.');
+}
+else if (message.includes('how do you loop through an array in javascript')) {
+    speak('You can use a for loop, forEach() method, or map() method to loop through an array in JavaScript.');
+}
+else if (message.includes('how can you add or remove elements from an array in javascript')) {
+    speak('You can use the push(), pop(), shift(), and unshift() methods to add or remove elements from an array in JavaScript.');
+}
+else if (message.includes('what is the difference between slice and splice in javascript')) {
+    speak('The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end. The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.');
+}
+else if (message.includes('how do you loop through an array in javascript')) {
+    speak('You can use a for loop, forEach() method, or map() method to loop through an array in JavaScript.');
+}
+else if (message.includes('what is the difference between slice and splice in javascript')) {
+    speak('The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end. The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.');
+}
+else if (message.includes('how do you loop through an array in javascript')) {
+    speak('You can use a for loop, forEach() method, or map() method to loop through an array in JavaScript.');
+}
+else if (message.includes('what is the difference between slice and splice in javascript')) {
+    speak('The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end. The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.');
+}
+else if (message.includes('how do you loop through an array in javascript')) {
+    speak('You can use a for loop, forEach() method, or map() method to loop through an array in JavaScript.');
+}
+else if (message.includes('what is the difference between slice and splice in javascript')) {
+    speak('The slice() method returns a shallow copy of a portion of an array into a new array object selected from start to end. The splice() method changes the contents of an array by removing or replacing existing elements and/or adding new elements in place.');
+}
+// document object model
+else if (message.includes('what is dom in javascript')) {
+    speak('The DOM is the Document Object Model. It is an interface that allows you to manipulate HTML and XML documents using JavaScript.');
+}
+else if (message.includes('how do you select elements in the dom using javascript')) {
+    speak('You can select elements in the DOM using methods like getElementById(), getElementsByClassName(), getElementsByTagName(), querySelector(), and querySelectorAll().');
+}
+else if (message.includes('what are some methods available for manipulating the dom')) {
+    speak('Some methods available for manipulating the DOM include createElement(), appendChild(), removeChild(), setAttribute(), and innerHTML.');
+}
+else if (message.includes('what is event bubbling in the dom')) {
+    speak('Event bubbling is the process where an event starts at the most specific element and flows up through its ancestors.');
+}
+else if (message.includes('how do you select elements by id class or tag name in the dom')) {
+    speak('You can select elements by ID using getElementById(), by class using getElementsByClassName(), and by tag name using getElementsByTagName().');
+}
+else if (message.includes('what are the differences between queryselector and getelementbyid')) {
+    speak('querySelector() returns the first element that matches a specified CSS selector, while getElementById() returns an element by its ID.');
+}
+else if (message.includes('how do you create new elements in the dom using javascript')) {
+    speak('You can create new elements in the DOM using the document.createElement() method.');
+}
+else if (message.includes('what is the purpose of the appendchild method in javascript')) {
+    speak('The appendChild() method is used to add elements to the DOM as children of a specified parent element.');
+}
+else if (message.includes('how do you use appendchild to add elements to the dom')) {
+    speak('You can use the appendChild() method to add elements to the DOM by specifying the parent element to which the new element will be added.');
+}
+else if (message.includes('what is the difference between appendchild and insertbefore')) {
+    speak('appendChild() adds an element as the last child of a parent element, while insertBefore() inserts an element before a specified child element.');
+}
+else if (message.includes('provide a use case where you would use appendchild to manipulate the dom')) {
+    speak('You would use appendChild() to dynamically add new elements to a web page based on user interactions or other events.');
+}
 // object, way of creating object ,iife function , arrow function, function expression, function declaration, higher order function, anonymous function, callback function, 
 
 else if (message.includes('what is an object in javascript')) {
