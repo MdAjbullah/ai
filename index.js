@@ -78,10 +78,13 @@ function takeCommand(message) {
     // Open websites
     } else if (message.includes('open google')) {
         window.open('https://www.google.com');
-    } else if (message.includes('open youtube')) {
+    } 
+    else if (message.includes('open youtube')) {
         window.open('https://www.youtube.com');
-
-    // JavaScript Concepts
+   
+     }
+    else if (message.includes('open facebook')) {
+        window.open('https://www.facebook.com');
     } else if (message.includes('what is javascript')) {
         speak('JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is widely used for client-side and server-side web development.');
     } else if (message.includes('what is a variable in javascript')) {
