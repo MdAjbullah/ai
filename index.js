@@ -64,26 +64,9 @@ function takeCommand(message) {
         speak('I am Miki, your personal assistant created by MD sir.');
     } else if (message.includes('how are you')) {
         speak('I am fine sir, thank you for asking.');
-
-    } 
-    // javascript
-
-    else if (message.includes('what is document object model')) {
-       speak('Dom stands for document object model .Dom is present inside the Browser.Dom is a not a part of javascript its a interface between browser and javascript.Dom is a browser api used between Javascript and browser to create the HTML css elements through javascript.Dom allows the user to convert html Elements into the javascript objects.Dom is a tree like structure of html tags that is present in javascript to manipulate the elements of html and css in javascript.Dom is a hirarchcal structure of HTML elements that is present inside the browser.To select the elements of Html in javascript we a Selectors in Dom :dom uses a keyword known as document that is used as a root object that has all the inbuilt methods of selectors. document.getElementById();document.getElementsByClassName()document.getElementsByTagName();document.getElementsByName();document.querySelector();document.querySelectorAll();')
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    else if (message.includes('what is your name')) {
+    } else if (message.includes('what is document object model')) {
+        speak('Dom stands for document object model. Dom is present inside the Browser. Dom is not a part of javascript, it is an interface between browser and javascript. Dom is a browser API used between Javascript and browser to create the HTML and CSS elements through javascript. Dom allows the user to convert HTML Elements into javascript objects. Dom is a tree-like structure of HTML tags that is present in javascript to manipulate the elements of HTML and CSS in javascript. Dom is a hierarchical structure of HTML elements that is present inside the browser. To select the elements of HTML in javascript we use Selectors in Dom: dom uses a keyword known as document that is used as a root object that has all the inbuilt methods of selectors. document.getElementById(); document.getElementsByClassName(); document.getElementsByTagName(); document.getElementsByName(); document.querySelector(); document.querySelectorAll();');
+    } else if (message.includes('what is your name')) {
         speak('I am Miki.');
     } else if (message.includes('what is the time')) {
         speak('The time is ' + new Date().getHours() + ":" + new Date().getMinutes());
