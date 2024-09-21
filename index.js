@@ -101,7 +101,22 @@ function takeCommand(message) {
         speak('Null is an assignment value that represents no value, while undefined means a variable has been declared but has not yet been assigned a value.');
     } else if (message.includes('what is scope in javascript')) {
         speak('Scope determines the accessibility of variables. JavaScript has global scope, function scope, and block scope.');
-    } else {
+    }
+         
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    else {
         speak('Sorry, I did not understand that command.');
     }
 }
