@@ -1,5 +1,6 @@
 let btn = document.querySelector('#btn');
 let content = document.querySelector('#content');
+let voice = document.querySelector('#voice');
 
 function speak(text, lang = 'hi-IN') {
     if ('speechSynthesis' in window) {
@@ -52,10 +53,14 @@ recognition.onresult = (event) => {
 btn.addEventListener('click', () => {
     if (!isRecognitionRunning) {
         recognition.start();
+        btn.style.display = 'none';
+        voice.style.display = 'block';
     }
 });
 
 function takeCommand(message) {
+    btn.style.display = 'flex';
+    voice.style.display = 'none';
     message = message.toLowerCase();
 
     // Basic responses

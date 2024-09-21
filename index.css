@@ -6,7 +6,7 @@
 
 body {
     width: 100%;
-    height: 100%;
+  
     background-color: black;
     display: flex;
     align-items: center;
@@ -27,7 +27,7 @@ h1 {
 }
 
 #name {
-    color: rgb(212, 43, 122);
+    color: rgb(9, 99, 168);
     font-size: 2rem;
 }
 
@@ -37,14 +37,14 @@ h1 {
 }
 
 #voice {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     display: none;
 }
 
 #btn {
     width: 30%;
-    background: linear-gradient(to right, #ff105f, #ffad06);
+    background: linear-gradient(to right, #b93c66, #1052bc, #6da0df);
     padding: 10px;
     display: flex;
     align-items: center;
