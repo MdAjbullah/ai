@@ -66,7 +66,33 @@ function takeCommand(message) {
     // Basic responses
     if (message.includes('hello')) {
         speak('Hello, how can I assist you?');
-    } else if (message.includes('who are you')) {
+
+    } 
+    if (message.includes('GOOD MORNING')) {
+        speak('GOOD MORNINNG, THANKS YOU?');
+    }
+    if (message.includes('WHO IS SARANYA')) {
+        speak('SARANYA IS A inteligece student of jspiders and she is a good student ,and she is FROM TAMINADU,INDIA and is friend of MD sir'); 
+    }
+    if (message.includes('WHO IS MD')) {
+        speak('md sir is normal common person , and full stack developer');
+    }
+  
+    if (message.includes('WHO IS aditya')) {
+        speak('aditya is a student of jspiders and he is a good student ,and he is also friend of md sir');
+    }
+    if (message.includes('WHO IS babli madaam')) {
+        speak('babli madaam is a md sir wife.she is too cute and innocent or and beautiful');
+    }
+    if (message.includes('WHO minulata malik')) {
+        speak('minulata malik is a md sir jspider friend.she is too cute and innocent or and beautiful and  very godd in study');
+    }
+    
+
+
+
+
+    else if (message.includes('who are you')) {
         speak('I am Miki, your personal assistant created by MD sir.');
     } else if (message.includes('how are you')) {
         speak('I am fine, thank you for asking. What about you?');
@@ -93,7 +119,7 @@ function takeCommand(message) {
         speak('There are three types of variables in JavaScript: var, let, and const.');
     } else if (message.includes('what is a function in javascript')) {
         speak('A function is a block of code that can be defined once and executed or invoked multiple times.');
-    } else if (message.includes('what is an array in javascript')) {
+    } else if (message.includes('what is ana array in javascript')) {
         speak('An array is a special variable that can hold more than one value at a time.');
     } else if (message.includes('what is an object in javascript')) {
         speak('An object is a collection of key-value pairs, where each key is a string and each value is any data type.');
