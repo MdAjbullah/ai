@@ -57,7 +57,6 @@ btn.addEventListener('click', () => {
         voice.style.display = 'block';
     }
 });
-
 function takeCommand(message) {
     message = message.toLowerCase();
     btn.style.display = 'flex';
@@ -66,33 +65,19 @@ function takeCommand(message) {
     // Basic responses
     if (message.includes('hello')) {
         speak('Hello, how can I assist you?');
-
-    } 
-    if (message.includes('GOOD MORNING')) {
-        speak('GOOD MORNINNG, THANKS YOU?');
-    }
-    if (message.includes('WHO IS SARANYA')) {
-        speak('SARANYA IS A inteligece student of jspiders and she is a good student ,and she is FROM TAMINADU,INDIA and is friend of MD sir'); 
-    }
-    if (message.includes('WHO IS MD')) {
-        speak('md sir is normal common person , and full stack developer');
-    }
-  
-    if (message.includes('WHO IS aditya')) {
-        speak('aditya is a student of jspiders and he is a good student ,and he is also friend of md sir');
-    }
-    if (message.includes('WHO IS babli madaam')) {
-        speak('babli madaam is a md sir wife.she is too cute and innocent or and beautiful');
-    }
-    if (message.includes('WHO is minulata')) {
-        speak(' minulata malik is a md sir jspider friend.she is too cute and innocent or and beautiful and  very godd in study');
-    }
-    
-
-
-
-
-    else if (message.includes('who are you')) {
+    } else if (message.includes('good')) {
+        speak('Good morning, thank you!');
+    } else if (message.includes('who is saranya')) {
+        speak('Saranya is an intelligent student of Jspiders and she is a good student. She is from Tamil Nadu, India and is a friend of MD sir.');
+    } else if (message.includes('who is md')) {
+        speak('MD sir is a normal common person and a full stack developer.');
+    } else if (message.includes('who is aditya')) {
+        speak('Aditya is a student of Jspiders and he is a good student. He is also a friend of MD sir.');
+    } else if (message.includes('who is babli madam')) {
+        speak('Babli madam is MD sir\'s wife. She is very cute, innocent, and beautiful.');
+    } else if (message.includes('who is minulata')) {
+        speak('Minulata Malik is MD sir\'s friend from Jspiders. She is very cute, innocent, beautiful, and very good in studies.');
+    } else if (message.includes('who are you')) {
         speak('I am Miki, your personal assistant created by MD sir.');
     } else if (message.includes('how are you')) {
         speak('I am fine, thank you for asking. What about you?');
@@ -108,10 +93,9 @@ function takeCommand(message) {
         window.open('https://www.youtube.com');
     } else if (message.includes('open facebook')) {
         window.open('https://www.facebook.com');
-    }
 
     // JavaScript concepts
-    else if (message.includes('what is javascript')) {
+    } else if (message.includes('what is javascript')) {
         speak('JavaScript is a high-level, interpreted programming language that conforms to the ECMAScript specification. It is widely used for client-side and server-side web development.');
     } else if (message.includes('what is a variable in javascript')) {
         speak('A variable is a container for storing data values. You can think of variables as a box that holds data.');
@@ -119,7 +103,7 @@ function takeCommand(message) {
         speak('There are three types of variables in JavaScript: var, let, and const.');
     } else if (message.includes('what is a function in javascript')) {
         speak('A function is a block of code that can be defined once and executed or invoked multiple times.');
-    } else if (message.includes('what is ana array in javascript')) {
+    } else if (message.includes('what is an array in javascript')) {
         speak('An array is a special variable that can hold more than one value at a time.');
     } else if (message.includes('what is an object in javascript')) {
         speak('An object is a collection of key-value pairs, where each key is a string and each value is any data type.');
@@ -127,7 +111,46 @@ function takeCommand(message) {
         speak('Null is an assignment value that represents no value, while undefined means a variable has been declared but has not yet been assigned a value.');
     } else if (message.includes('what is scope in javascript')) {
         speak('Scope determines the accessibility of variables. JavaScript has global scope, function scope, and block scope.');
-    }
+    } else if (message.includes('what are the different ways to create an object in javascript')) {
+        speak('There are several ways to create objects in JavaScript: object literals, the new keyword, object constructors, and classes.');
+    } else if (message.includes('what is an object literal in javascript')) {
+        speak('An object literal is a comma-separated list of key-value pairs wrapped in curly braces.');
+    } else if (message.includes('what is the new keyword in javascript')) {
+        speak('The new keyword is used to create an instance of a user-defined object type or one of the built-in object types.');
+    } else if (message.includes('what is an object constructor in javascript')) {
+        speak('An object constructor is a function that is used to create new objects with the same properties and methods.');
+    } else if (message.includes('what are classes in javascript')) {
+        speak('Classes are a template for creating objects. They encapsulate data with code to work on that data.');
+    } else if (message.includes('what is the difference between object literal and object constructor')) {
+        speak('Object literals are used to create a single object, while object constructors are used to create multiple objects of the same type.');
+    } else if (message.includes('what is the difference between object constructor and classes')) {
+        speak('Object constructors are functions that create objects, while classes are a template for creating objects.');
+    } else if (message.includes('what are the different ways to create an array in javascript')) {
+        speak('There are several ways to create arrays in JavaScript: array literals, the new keyword, and the Array constructor.');
+    } else if (message.includes('what is an array literal in javascript')) {
+        speak('An array literal is a list of values separated by commas and enclosed in square brackets.');
+    } else if (message.includes('what is the Array constructor in javascript')) {
+        speak('The Array constructor is used to create new array objects.');
+    } else if (message.includes('what is the difference between array literal and Array constructor')) {
+        speak('Array literals are used to create a single array, while the Array constructor is used to create multiple arrays.');
+    } else if (message.includes('what are the different ways to create a function in javascript')) {
+        speak('There are several ways to create functions in JavaScript: function declarations, function expressions, arrow functions, and function constructors.');
+    } else if (message.includes('what is a function declaration in javascript')) {
+        speak('A function declaration is a named function that can be called before it is defined.');
+    } else if (message.includes('what is a function expression in javascript')) {
+        speak('A function expression is a function that is assigned to a variable.');
+    } else if (message.includes('what are arrow functions in javascript')) {
+        speak('Arrow functions are a more concise way to write functions in JavaScript.');
+    } else if (message.includes('what is a function constructor in javascript')) {
+        speak('A function constructor is a function that is used to create new functions.');
+    } else if (message.includes('what is the difference between function declaration and function expression')) {
+        speak('Function declarations are hoisted, while function expressions are not.');
+    } else if (message.includes('what is the difference between function expression and arrow function')) {
+        speak('Arrow functions do not have their own this value, while function expressions do.');
+   
+     }
+
+
     // object ,way to create objet
     else if (message.includes('what is an object in javascript')) {
         speak('An object is a collection of key-value pairs, where each key is a string and each value is any data type.');
