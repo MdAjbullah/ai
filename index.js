@@ -84,8 +84,8 @@ function takeCommand(message) {
     if (message.includes('WHO IS babli madaam')) {
         speak('babli madaam is a md sir wife.she is too cute and innocent or and beautiful');
     }
-    if (message.includes('WHO minulata malik')) {
-        speak('minulata malik is a md sir jspider friend.she is too cute and innocent or and beautiful and  very godd in study');
+    if (message.includes('WHO is minulata')) {
+        speak(' minulata malik is a md sir jspider friend.she is too cute and innocent or and beautiful and  very godd in study');
     }
     
 
