@@ -75,7 +75,7 @@ function takeCommand(message) {
         speak('Aditya is a student of Jspiders and he is a good student. He is also a friend of MD sir.');
     } else if (message.includes('who is babli madam')) {
         speak('Babli madam is MD sir\'s wife. She is very cute, innocent, and beautiful.');
-    } else if (message.includes('who is minu')) {
+    } else if (message.includes('who is meenu')) {
         speak('Minulata Malik is MD sir\'s friend from Jspiders. She is very cute, innocent, beautiful, and very good in studies.');
     } else if (message.includes('who are you')) {
         speak('I am Miki, your personal assistant created by MD sir.');
